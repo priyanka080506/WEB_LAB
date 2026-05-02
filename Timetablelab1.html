@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Department Timetable - JSS</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+
+            /* BACKGROUND IMAGE FIX */
+            background-image: url("JSSSTU_Logo.jpeg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 300px;
+            background-color: #f4f6f8;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            color: #003366;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: auto;
+            background-color: rgba(255,255,255,0.9); /* readability */
+        }
+
+        th {
+            background-color: #003366;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .break {
+            background-color: #ffcccb;
+            font-weight: bold;
+        }
+
+        .lunch {
+            background-color: #ffe599;
+            font-weight: bold;
+        }
+
+        ul {
+            width: 80%;
+            margin: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: darkblue;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<center>
+    <img src="JSSSTU_Logo.jpeg" width="100">
+    <h1>JSS Academy of Technical Education</h1>
+    <h2>Department of Computer Science & Engineering</h2>
+    <h3>Semester VI - Class Timetable</h3>
+</center>
+
+<hr>
+
+<h3>Course Details</h3>
+<table>
+<tr>
+    <th>Course Code</th>
+    <th>Course Title</th>
+    <th>Credits</th>
+    <th>Faculty (Initials)</th>
+</tr>
+
+<tr><td>22CS610</td><td>Machine Learning</td><td>4</td><td>RK</td></tr>
+<tr><td>22CS620</td><td>Web Technology</td><td>3</td><td>AN</td></tr>
+<tr><td>22CS630</td><td>Internet of Things</td><td>3</td><td>SU</td></tr>
+<tr><td>22CS630P</td><td>IoT Laboratory</td><td>1</td><td>SU</td></tr>
+<tr><td>22CS640</td><td>Cloud Computing</td><td>3</td><td>RK</td></tr>
+<tr><td>22HU612</td><td>Constitution of India</td><td>2</td><td>AN</td></tr>
+</table>
+
+<hr>
+
+<h3>Class Timetable</h3>
+
+<table>
+
+<tr>
+    <th>Day</th>
+    <th>7:30</th>
+    <th>8:30</th>
+    <th>9:30</th>
+    <th>10:30</th>
+    <th>11:30</th>
+    <th>12:30</th>
+    <th>1:30</th>
+    <th>2:30</th>
+    <th>3:30</th>
+</tr>
+
+<tr>
+    <td>MON</td>
+    <td></td>
+    <td>22CS640 (RK)</td>
+    <td>OE</td>
+    <td rowspan="6" class="break">BREAK</td>
+    <td colspan="2">22CS620 Lab (AN)</td>
+    <td rowspan="6" class="lunch">LUNCH</td>
+    <td>22CS610 (RK)</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>TUE</td>
+    <td></td>
+    <td></td>
+    <td>OE</td>
+    <td colspan="2">22CS630P (SU)</td>
+    <td>22CS610 (RK)</td>
+    <td>22CS610 (RK)</td>
+</tr>
+
+<tr>
+    <td>WED</td>
+    <td></td>
+    <td>22CS640 (RK)</td>
+    <td>OE</td>
+    <td>22CS630 (SU)</td>
+    <td>22CS630P (SU)</td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>THU</td>
+    <td>22CS630P (SU)</td>
+    <td></td>
+    <td>OE</td>
+    <td>22CS610 (RK)</td>
+    <td>22CS620 (AN)</td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>FRI</td>
+    <td></td>
+    <td>22CS640 (RK)</td>
+    <td>OE</td>
+    <td>22CS610 (RK)</td>
+    <td>22CS620 (AN)</td>
+    <td>22HU612 (AN)</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>SAT</td>
+    <td></td>
+    <td></td>
+    <td>OE</td>
+    <td>22HU612 (AN)</td>
+    <td>22CS630 (SU)</td>
+    <td>22CS610 (RK)</td>
+    <td></td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Reference Links</h3>
+<ul>
+    <li><a href="https://jssateb.ac.in">JSS Official Website</a></li>
+</ul>
+
+<hr>
+
+<footer>
+    <p>Prepared by: Madhushree | CSE | 2026</p>
+</footer>
+
+</body>
+</html>
+
