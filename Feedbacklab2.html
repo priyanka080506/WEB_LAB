@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #667eea, #764ba2); /* gradient */
+        }
+
+        h1 {
+            color: white;
+        }
+
+        form {
+            background-color: white;
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h3 {
+            color: #333366;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2e8b57;
+        }
+
+        input[type="reset"] {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #cc0000;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1 align="center">Student Feedback Form</h1>
+
+<form>
+
+<h3>Student Information</h3>
+
+Name:
+<input type="text" name="name">
+
+USN:
+<input type="text" name="usn">
+
+Email:
+<input type="email" name="email">
+
+<hr>
+
+<h3>Course Feedback</h3>
+
+Select Subject:
+<select>
+    <option>Machine Learning</option>
+    <option>Web Technology</option>
+    <option>IoT</option>
+    <option>Cloud Computing</option>
+</select>
+
+<br>
+
+Faculty Rating:<br>
+<input type="radio" name="rating"> Excellent
+<input type="radio" name="rating"> Good
+<input type="radio" name="rating"> Average
+<input type="radio" name="rating"> Poor
+
+<br><br>
+
+Teaching Methods:<br>
+<input type="checkbox"> PPT
+<input type="checkbox"> Board
+<input type="checkbox"> Lab
+<input type="checkbox"> Assignment
+
+<br><br>
+
+Additional Feedback:
+<textarea rows="4"></textarea>
+
+<br>
+
+Semester:
+<select>
+    <option>Sem 1</option>
+    <option>Sem 2</option>
+    <option>Sem 3</option>
+    <option>Sem 4</option>
+    <option>Sem 5</option>
+    <option>Sem 6</option>
+</select>
+
+<br><br>
+
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+
+</form>
+
+<footer>
+    <p>Prepared by: Priyanka | CSE</p>
+</footer>
+
+</body>
+</html>
