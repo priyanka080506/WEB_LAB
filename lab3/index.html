@@ -2,17 +2,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Department Portal</title>
+    <title>4 Frame Layout</title>
 </head>
 
-<frameset cols="20%,80%" border="3">
+<!-- Divide page into 2 rows -->
+<frameset rows="50%,50%">
 
-    <!-- LEFT FIXED MENU -->
-    <frame src="menu.html" name="menu">
+    <!-- Top Row (2 columns) -->
+    <frameset cols="50%,50%">
+        <frame src="topleft.html">
+        <frame src="topright.html">
+    </frameset>
 
-    <!-- RIGHT CONTENT -->
-    <frame src="home.html" name="content">
+    <!-- Bottom Row (2 columns) -->
+    <frameset cols="50%,50%">
+        <frame src="bottomleft.html">
+        <frame src="bottomright.html">
+    </frameset>
 
 </frameset>
 
 </html>
+
