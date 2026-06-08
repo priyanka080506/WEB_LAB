@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Date Display</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#11998e,#38ef7d);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h1{
+    color:#333;
+    margin-bottom:20px;
+}
+
+.date{
+    font-size:28px;
+    font-weight:bold;
+    color:#0072ff;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Today's Date</h1>
+
+<div class="date">
+
+<?php
+echo date("d-m-Y");
+?>
+
+</div>
+
+</div>
+
+</body>
+</html>

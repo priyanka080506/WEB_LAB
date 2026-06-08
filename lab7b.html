@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information Form</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+
+            padding: 25px;
+
+            width: 420px;
+
+            border-radius: 15px;
+
+            box-shadow: 0px 0px 15px gray;
+        }
+
+        h2 {
+            text-align: center;
+
+            color: #003366;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+
+            padding: 10px;
+
+            margin-top: 5px;
+
+            margin-bottom: 15px;
+
+            border-radius: 8px;
+
+            border: 1px solid gray;
+
+            box-sizing: border-box;
+        }
+
+        .gender {
+            width: auto;
+        }
+
+        button {
+            width: 100%;
+
+            padding: 12px;
+
+            background-color: #003366;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+        #output {
+            height: 120px;
+        }
+
+        .error {
+            color: red;
+
+            text-align: center;
+
+            margin-bottom: 10px;
+        }
+
+        /* FULL COLOR BAR */
+
+        #color {
+            width: 100%;
+
+            height: 60px;
+
+            border: none;
+
+            padding: 0;
+
+            cursor: pointer;
+
+            background: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Information Form</h2>
+
+    <div id="error" class="error"></div>
+
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Email:</label>
+    <input type="email" id="email">
+
+    <label>Mobile Number:</label>
+    <input type="text" id="mobile">
+
+    <label>Gender:</label><br>
+
+    <input type="radio"
+    name="gender"
+    value="Male"
+    class="gender"> Male
+
+    <input type="radio"
+    name="gender"
+    value="Female"
+    class="gender"> Female
+
+    <br><br>
+
+    <label>Favorite Color:</label>
+
+    <!-- FULL COLOR SPECTRUM BAR -->
+
+    <input type="color" id="color">
+
+    <button onclick="validateForm()">
+        Submit
+    </button>
+
+    <br><br>
+
+    <textarea id="output"
+    readonly
+    placeholder="Student information will appear here...">
+    </textarea>
+
+</div>
+
+<script>
+
+function validateForm()
+{
+    let name =
+    document.getElementById("name").value;
+
+    let email =
+    document.getElementById("email").value;
+
+    let mobile =
+    document.getElementById("mobile").value;
+
+    let color =
+    document.getElementById("color").value;
+
+    let genderList =
+    document.getElementsByName("gender");
+
+    let gender = "";
+
+    let error =
+    document.getElementById("error");
+
+    error.innerHTML = "";
+
+    // Empty Validation
+
+    if(name=="" || email=="" || mobile=="")
+    {
+        error.innerHTML =
+        "Please fill all fields";
+
+        return;
+    }
+
+    // Email Validation
+
+    let emailPattern =
+    /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if(!email.match(emailPattern))
+    {
+        error.innerHTML =
+        "Invalid Email";
+
+        return;
+    }
+
+    // Mobile Validation
+
+    let mobilePattern =
+    /^[0-9]{10}$/;
+
+    if(!mobile.match(mobilePattern))
+    {
+        error.innerHTML =
+        "Enter valid 10 digit mobile number";
+
+        return;
+    }
+
+    // Gender Validation
+
+    for(let i=0; i<genderList.length; i++)
+    {
+        if(genderList[i].checked)
+        {
+            gender =
+            genderList[i].value;
+        }
+    }
+
+    if(gender=="")
+    {
+        error.innerHTML =
+        "Select Gender";
+
+        return;
+    }
+
+    // Display Information
+
+    let result =
+
+    "Name: " + name + "\n" +
+
+    "Email: " + email + "\n" +
+
+    "Mobile: " + mobile + "\n" +
+
+    "Gender: " + gender + "\n" +
+
+    "Favorite Color: " + color;
+
+    document.getElementById("output").value =
+    result;
+}
+
+</script>
+
+</body>
+</html>
+

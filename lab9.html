@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form Validation</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#141e30,#243b55,#4facfe);
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:500px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    color:white;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:32px;
+    letter-spacing:1px;
+}
+
+.input-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:16px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:13px 15px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    font-size:15px;
+    background:rgba(255,255,255,0.9);
+    color:#333;
+    transition:0.3s;
+}
+
+input:focus{
+    transform:scale(1.02);
+    box-shadow:0 0 12px rgba(255,255,255,0.7);
+}
+
+.btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:15px;
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.result{
+    margin-top:20px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+}
+</style>
+
+<script>
+function validateForm(){
+
+    var userid = document.getElementById("userid").value;
+    var name = document.getElementById("name").value;
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+
+    var userPattern = /^[A-Za-z0-9]{5,12}$/;
+    var namePattern = /^[A-Za-z ]{15,}$/;
+    var passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9]).{8,}$/;
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!userPattern.test(userid)){
+        alert("User ID must be 5 to 12 characters");
+        return false;
+    }
+
+    if(!namePattern.test(name)){
+        alert("Name should contain only alphabets and minimum 15 characters");
+        return false;
+    }
+
+    if(!passwordPattern.test(password)){
+        alert("Password must contain 8 characters including one uppercase letter, one special character and one number");
+        return false;
+    }
+
+    if(!emailPattern.test(email)){
+        alert("Enter a valid Email Address");
+        return false;
+    }
+
+    document.getElementById("result").innerHTML =
+    "Registration Successful";
+
+    return false;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+<div class="input-group">
+<label>User ID</label>
+<input type="text" id="userid" placeholder="Enter User ID">
+</div>
+
+<div class="input-group">
+<label>Name</label>
+<input type="text" id="name" placeholder="Enter Full Name">
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" id="password" placeholder="Enter Password">
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="text" id="email" placeholder="Enter Email Address">
+</div>
+
+<button class="btn" type="submit">
+Validate Form
+</button>
+
+<div class="result" id="result"></div>
+
+</form>
+
+</div>
+
+</body>
+</html>

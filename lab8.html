@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Student marks </title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1e3c72,#2a5298,#6dd5ed);
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:450px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    color:white;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    font-size:30px;
+    letter-spacing:1px;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:15px;
+    font-weight:600;
+}
+
+input[type="text"]{
+    width:100%;
+    padding:12px 15px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    font-size:15px;
+    background:rgba(255,255,255,0.9);
+    color:#333;
+    transition:0.3s;
+}
+
+input[type="text"]:focus{
+    transform:scale(1.02);
+    box-shadow:0 0 10px rgba(255,255,255,0.6);
+}
+
+.btn{
+    width:100%;
+    padding:12px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.15);
+    border:none;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+@media(max-width:500px){
+    .container{
+        padding:25px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+}
+</style>
+
+<script>
+function calculateAverage() {
+
+    var reg = document.getElementById("reg").value;
+    var sub = document.getElementById("sub").value;
+
+    var t1 = parseFloat(document.getElementById("t1").value);
+    var t2 = parseFloat(document.getElementById("t2").value);
+    var t3 = parseFloat(document.getElementById("t3").value);
+
+    if(reg == "" || sub == "" || isNaN(t1) || isNaN(t2) || isNaN(t3)){
+        alert("please fill all fields correctly");
+        return;
+    }
+
+    var total = t1 + t2 + t3;
+
+    var min = Math.min(t1,t2,t3);
+
+    var avg = (total-min)/2;
+
+    document.getElementById("result").style.display="block";
+
+    document.getElementById("result").innerHTML = "Average of Best 2 Tests : " + avg.toFixed(2);
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2> Student Test Marks </h2>
+
+<div class="input-group">
+<label> Register Number </label>
+<input type="text" id="reg" placeholder="Enter Register Number">
+</div>
+
+<div class="input-group">
+<label> Subject Code </label>
+<input type="text" id="sub" placeholder="Enter Subject Code">
+</div>
+
+<div class="input-group">
+<label> Test 1 marks </label>
+<input type="text" id="t1" placeholder="Enter Test 1 marks">
+</div>
+
+<div class="input-group">
+<label> Test 2 marks </label>
+<input type="text" id="t2" placeholder="Enter Test 2 marks">
+</div>
+
+<div class="input-group">
+<label> Test 3 Marks </label>
+<input type="text" id="t3" placeholder="Enter Test 3 marks">
+</div>
+
+<button class="btn" onclick="calculateAverage()">
+Calculate Average
+</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+</body>
+</html>
